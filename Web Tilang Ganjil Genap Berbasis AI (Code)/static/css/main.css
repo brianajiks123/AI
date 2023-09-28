@@ -1,0 +1,42 @@
+/* Navbar */
+.nav-bg {
+    background-color: #87d0ed;
+}
+
+.button_menu {
+    text-decoration: none;
+    color: white;
+}
+
+/* About Us */
+.box {
+    background-color: #87d0ed;
+    height: 250px;
+}
+
+.icon {
+    font-size: 50px;
+}
+
+.textbox {
+    font-size: 20px;
+}
+
+/* Footer */
+.footer_custom {
+    background-color: #87d0ed;
+    height: 50px;
+}
+
+/* Report */
+.result-detect-frame {
+    background-color: #87d0ed;
+}
+
+.result-detect-main {
+    background-color: white;
+}
+
+.info-tilang {
+    width: 70px;
+}

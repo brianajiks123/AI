@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <title>Laporan</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar nav-bg">
+        <div class="container-fluid">
+          <a href="/"><img src="../static/images/UNAKI.png" alt="Logo" height="60" class="d-inline-block align-text-top mx-2"></a>
+          <div class="d-flex px-3">
+            <a href="/" class="button_menu mx-3">Tilang</a>
+            <a href="/about-us" class="button_menu">Tentang</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container text-center pt-5" style="height: 85vh">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="result-detect-frame justify-content-center p-3">
+            <div class="result-detect-main pt-3">
+              <h1>Hasil Deteksi</h1>
+              <img src="{{ img_report }}" height="60" class="my-3">
+              <h5>{{ txt_report }}</h5>
+              <h6 class="my-3">Informasi Keterangan :</h6>
+              {% if tilang_report == "NO" %}
+              <center><h5 class="info-tilang bg-danger text-white my-4">TIDAK</h5></center>
+              {% endif %}
+              <h6>Di Berlakukan <span class="fw-bold">TILANG</span></h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer_custom text-center pt-3">
+      <p>© 2023 - Team 6</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jspdf.umd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/html2canvas.min.js') }}"></script>
+    <script>
+      function generatePDF() {
+        // Get HTML Content
+        var HTML_Content = document.documentElement.innerHTML;
+
+        // Initiate jsPDF Object
+        var pdf = new jsPDF();
+
+        // Convert HTML to PDF
+        pdf.html(HTML_Content, {
+          callback: function (pdf) {
+            // Save PDF
+            pdf.save("laporan_tilang.pdf");
+          },
+          x: 10,
+          y: 10,
+        });
+      }
+
+      // Add Event Listener (Click)
+      document.getElementById("generate-pdf-btn").addEventListener("click", generatePDF);
+    </script>
+  </body>
+</html>

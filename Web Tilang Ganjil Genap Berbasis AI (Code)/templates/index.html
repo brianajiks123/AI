@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tilang Online - Upload</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar nav-bg">
+        <div class="container-fluid">
+          <a href="/"><img src="../static/images/UNAKI.png" alt="Logo" height="60" class="d-inline-block align-text-top mx-2"></a>
+          <div class="d-flex px-3">
+            <a href="/" class="button_menu mx-3">Tilang</a>
+            <a href="/about-us" class="button_menu">Tentang</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container text-center pt-5" style="height: 85vh">
+      <h1 class="my-5">Upload Gambar Plat Kendaraan</h1>
+      <form action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="file" class="form-label">Pilih sebuah file gambar</label>
+          <input type="file" class="form-control" id="file" name="file" />
+        </div>
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+    </div>
+    <footer class="footer_custom text-center pt-3">
+      <p>© 2023 - Team 6</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  </body>
+</html>

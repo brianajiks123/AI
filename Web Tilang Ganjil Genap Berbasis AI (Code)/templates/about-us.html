@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Tentang Kami</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar nav-bg">
+          <div class="container-fluid">
+            <a href="/"><img src="../static/images/UNAKI.png" alt="Logo" height="60" class="d-inline-block align-text-top mx-2"></a>
+            <div class="d-flex px-3">
+              <a href="/" class="button_menu mx-3">Tilang</a>
+              <a href="/about-us" class="button_menu">Tentang</a>
+            </div>
+          </div>
+        </nav>
+    </header>
+    <div class="container text-center py-5">
+        <h1 class="my-5">Profile Team 6</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="box d-flex flex-column justify-content-center px-4 rounded">
+                        <i class="fas fa-user icon"></i>
+                        <p class="textbox mt-4 text-white">Brian Aji Pamungkas</p>
+                        <p class="textbox text-white">223.20.00.33</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="box d-flex flex-column justify-content-center px-4 rounded">
+                        <i class="fas fa-user icon"></i>
+                        <p class="textbox mt-4 text-white">Lathifatul Athiyah</p>
+                        <p class="textbox text-white">223.20.00.47</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="box d-flex flex-column justify-content-center px-4 rounded">
+                        <i class="fas fa-user icon"></i>
+                        <p class="textbox mt-4 text-white">Tjia, Marcelino Jovan</p>
+                        <p class="textbox text-white">223.20.00.34</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer_custom text-center pt-3">
+        <p>© 2023 - Team 6</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>
